@@ -1,29 +1,40 @@
 import React from "react"
-import { SidebarOption } from "./SidebarOption";
-import { RiBookmarkLine, RiFileList2Line, RiHashtag, RiMailLine, RiMoreFill, RiNotification2Fill, RiTwitterFill, RiUserLine } from "react-icons/ri";
+import "./Sidebar.css";
+import { SidebarOption } from "./SidebarOption"; 
+import { Button } from "@mui/material";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import HomeIcon from '@mui/icons-material/Home';
+import TagIcon from '@mui/icons-material/Tag';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import MailIcon from '@mui/icons-material/Mail';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 type Props = {}
 
 const sidebarItems = [
-    { text: "Home", Icon: RiTwitterFill },
-    { text: "Explore", Icon: RiHashtag },
-    { text: "Notifications", Icon: RiNotification2Fill },
-    { text: "Messages", Icon: RiMailLine },
-    { text: "Bookmarks", Icon: RiBookmarkLine },
-    { text: "Lists", Icon: RiFileList2Line },
-    { text: "Profile", Icon: RiUserLine },
-    { text: "More", Icon: RiMoreFill }
+    { text: "", Icon: TwitterIcon },
+    { text: "Home", Icon: HomeIcon },
+    { text: "Explore", Icon: TagIcon },
+    { text: "Notifications", Icon: NotificationsIcon },
+    { text: "Messages", Icon: MailIcon },
+    { text: "Bookmarks", Icon: BookmarkIcon },
+    { text: "Lists", Icon: ListAltIcon },
+    { text: "Profile", Icon: PermIdentityIcon },
+    { text: "More", Icon: MoreHorizIcon }
 ]
 
 export const Sidebar: React.FC<Props> = () => {
     return (
         <div className="sidebar">
-            <RiTwitterFill />
             {sidebarItems.map((item) => <SidebarOption text={item.text} Icon={item.Icon} />)}
 
-            <button>
+            <Button variant="contained" className="sidebar__tweet" fullWidth>
                 Tweet
-            </button>
+            </Button>
+
         </div>
     )
 }

@@ -1,9 +1,13 @@
+import { SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/types";
 import React from "react";
-import { IconType } from "react-icons";
+import "./SidebarOption.css";
 
 export type SidebarOptionType = {
     text: string;
-    Icon: IconType
+    Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+        muiName: string;
+    }
 }
 
 export const SidebarOption: React.FC<SidebarOptionType> = ({ text, Icon }) => {
